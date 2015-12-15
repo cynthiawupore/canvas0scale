@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<canvas id="canvas" style="margin:0 auto;border:1px #ddd solid">
+		The current browser does not support Canvas, can replace the browser a try!
+	</canvas>
+
+	<script>
+
+		window.onload = function(){
+			var canvas = document.getElementById('canvas');
+
+			canvas.width = 1024;
+			canvas.height = 768;
+
+			if(canvas.getContext('2d')){
+				var context = canvas.getContext('2d');
+
+				context.lineWidth = 5;
+
+				context.save();
+					context.scale(1,1);
+					context.strokeRect(50,50,200,200);
+				context.restore();
+
+				context.save();
+					context.scale(2,2);
+					context.strokeRect(50,50,200,200);
+				context.restore();
+
+				context.save();
+					context.scale(3,3);
+					context.strokeRect(50,50,200,200);
+				context.restore();
+	
+
+			}else{
+				alert('当前游览器不支持Canvas，请更换游览器后再试！');
+			}
+		}
+
+	</script>
+</body>
+<script>
+	/*图形变换
+
+		位移 translate(x,y)
+
+		旋转 rotate(deg)
+
+		缩放 scale(sx,sy) :
+			原点、边框、大小 都scale了
+
+
+
+	变换矩阵 trasform
+		a c e
+		b d f
+		0 0 1
+
+		a 水平缩放（1）
+		b 水平倾斜（0）
+		c 垂直倾斜（0）
+		d 垂直缩放（1）
+		e 水平位移（0）
+		f 垂直位移（0）
+		
+	*/
+</script>
+</html>
